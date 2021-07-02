@@ -34,3 +34,11 @@ var nsDontAdd = document.querySelectorAll('[data-ns-dont-add]')
 for(i=0; i<lenght(nsDontAdd); i++){
     nsDontAdd[i].removeAttribute('data-ns-dont-add')
 }
+function toggleAttribute(data, attr, value=null){
+    if(data.getAttribute(attr)){
+        data.removeAttribute(attr)
+    }else{
+        data.setAttribute(attr, value)
+    }
+    // console.log(data.parentNode.childNodes[1].toggleAttribute('type', 'password'))
+}
