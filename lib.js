@@ -1,12 +1,16 @@
-var dataChild = document.querySelectorAll('[data-to-child]')
+var dataChild = document.querySelectorAll('[data-ns-to-child]')
 function smoothFun(node, string){
     var child = node.childNodes
-    var i=1
-    while(i<lenght(child)){
-        smoothFun(child[i], string)
-        i+=2
+    var i=0
+    for(i=0; i<lenght(child); i++){
+        if(child[i].nodeName != '#text'){
+            smoothFun(child[i], string)
+        }
     }
-    node.classList.add(string)
+    console.log(node.dataset)
+    if(node.dataset.nsDontAdd != string){
+        node.classList.add(string)
+    }
 }
 function lenght(x){
     var lenght = 0
@@ -17,12 +21,16 @@ function lenght(x){
     return lenght;
 }
 function searchChild(node){
-    var spl = node.dataset.toChild.split(' ')
+    var spl = node.dataset.nsToChild.split(' ')
     for(i=0; i<lenght(spl); i++){
         smoothFun(node, spl[i])
     }
-    node.removeAttribute('data-to-child')
+    node.removeAttribute('data-ns-to-child')
 }
 for(i=0; i<lenght(dataChild); i++){
     searchChild(dataChild[i])
+}
+var nsDontAdd = document.querySelectorAll('[data-ns-dont-add]')
+for(i=0; i<lenght(nsDontAdd); i++){
+    nsDontAdd[i].removeAttribute('data-ns-dont-add')
 }
