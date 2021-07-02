@@ -34,7 +34,7 @@ var nsDontAdd = document.querySelectorAll('[data-ns-dont-add]')
 for(i=0; i<lenght(nsDontAdd); i++){
     nsDontAdd[i].removeAttribute('data-ns-dont-add')
 }
-function toggleAttribute(data, attr, value=null){
+function toggleAttr(data, attr, value=null){
     if(data.getAttribute(attr)){
         data.removeAttribute(attr)
     }else{
