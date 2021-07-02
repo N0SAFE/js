@@ -40,5 +40,4 @@ function toggleAttribute(data, attr, value=null){
     }else{
         data.setAttribute(attr, value)
     }
-    // console.log(data.parentNode.childNodes[1].toggleAttribute('type', 'password'))
 }
