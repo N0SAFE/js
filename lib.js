@@ -1,4 +1,3 @@
-var dataChild = document.querySelectorAll('[data-ns-to-child]')
 function smoothFun(node, string){
     var child = node.childNodes
     var i=0
@@ -27,12 +26,15 @@ function searchChild(node){
     }
     node.removeAttribute('data-ns-to-child')
 }
-for(i=0; i<lenght(dataChild); i++){
-    searchChild(dataChild[i])
-}
-var nsDontAdd = document.querySelectorAll('[data-ns-dont-add]')
-for(i=0; i<lenght(nsDontAdd); i++){
-    nsDontAdd[i].removeAttribute('data-ns-dont-add')
+function addToChild(){
+    var dataChild = document.querySelectorAll('[data-ns-to-child]')
+    for(i=0; i<lenght(dataChild); i++){
+        searchChild(dataChild[i])
+    }
+    var nsDontAdd = document.querySelectorAll('[data-ns-dont-add]')
+    for(i=0; i<lenght(nsDontAdd); i++){
+        nsDontAdd[i].removeAttribute('data-ns-dont-add')
+    }
 }
 function nsToggleAttr(data, attr, value=null){
     if(data.getAttribute(attr)){
