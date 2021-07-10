@@ -26,8 +26,8 @@ function searchChild(node){
     }
     node.removeAttribute('data-ns-to-child')
 }
-function addToChild(){
-    var dataChild = document.querySelectorAll('[data-ns-to-child]')
+function addToChild(dataset = "[data-ns-to-child]"){
+    var dataChild = document.querySelectorAll(dataset)
     for(i=0; i<lenght(dataChild); i++){
         searchChild(dataChild[i])
     }
