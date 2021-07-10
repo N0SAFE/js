@@ -43,3 +43,4 @@ function nsToggleAttr(data, attr, value=null){
         data.setAttribute(attr, value)
     }
 }
+addToChild();
