@@ -1,3 +1,48 @@
+export class Timer {
+    // ! all can be:    stop with stop()
+    // !                pause with pause()
+    // !                start/restart with start()
+    // !                return state with getStateRunning()
+    // !                return time left with getTimeLeft()
+
+    // ! func with exec after can set the func to exec after with setFunction(Function, ...args)
+
+    // ! set timer with function in end
+    static timeout(Function, delay, ...funcArgs) {
+        return new TimerClasse.TimerTimeout(Function, delay, ...funcArgs)
+    }
+
+    // ! run an infinit loop and run first loop after timinig
+    static infinityLooper(Function, delay, ...funcArgs) {
+        return new TimerClasse.TimerInfinityReapeter(Function, delay, ...funcArgs)
+    }
+
+    // ! run an infinit loop and run instant 
+    static infinityLooperInstant(Function, delay, ...funcArgs) {
+        return new TimerClasse.TimerInfinityReapeterInstant(Function, delay, ...funcArgs)
+    }
+
+    // ! run a loop with number of loop in argument and run first loop after timing
+    static looper(Function, delay, numberOfLoop, ...funcArgs) {
+        return new TimerClasse.TimerReapeter(Function, delay, numberOfLoop, ...funcArgs)
+    }
+
+    // ! run a loop with number of loop in argument and run execution instant
+    static looperInstant(Function, delay, numberOfLoop, ...funcArgs) {
+        return new TimerClasse.TimerReapeterInstant(Function, delay, numberOfLoop, ...funcArgs)
+    }
+
+    // ! run a loop with number of loop in argument, run first loop after timing and run a function after the loop as finish
+    static looperRunAfter(Function, delay, numberOfLoop, ...funcArgs) {
+        return new TimerClasse.TimerReapeaterWithFunctionAfter(Function, delay, numberOfLoop, ...funcArgs)
+    }
+
+    // ! run a loop with number of loop in argument, run execution instant and run a function after the loop as finish
+    static looperInstantRunAfter(Function, delay, numberOfLoop, ...funcArgs) {
+        return new TimerClasse.TimerReapeaterInstantWithFunctionAfter(Function, delay, numberOfLoop, ...funcArgs)
+    }
+}
+
 export class TimerTimeout {
     constructor(callback, delay, ...args) {
         this.selfID = new Date()
