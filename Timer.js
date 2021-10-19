@@ -9,37 +9,37 @@ export class Timer {
 
     // ! set timer with function in end
     static timeout(Function, delay, ...funcArgs) {
-        return new TimerClasse.TimerTimeout(Function, delay, ...funcArgs)
+        return new TimerTimeout(Function, delay, ...funcArgs)
     }
 
     // ! run an infinit loop and run first loop after timinig
     static infinityLooper(Function, delay, ...funcArgs) {
-        return new TimerClasse.TimerInfinityReapeter(Function, delay, ...funcArgs)
+        return new TimerInfinityReapeter(Function, delay, ...funcArgs)
     }
 
     // ! run an infinit loop and run instant 
     static infinityLooperInstant(Function, delay, ...funcArgs) {
-        return new TimerClasse.TimerInfinityReapeterInstant(Function, delay, ...funcArgs)
+        return new TimerInfinityReapeterInstant(Function, delay, ...funcArgs)
     }
 
     // ! run a loop with number of loop in argument and run first loop after timing
     static looper(Function, delay, numberOfLoop, ...funcArgs) {
-        return new TimerClasse.TimerReapeter(Function, delay, numberOfLoop, ...funcArgs)
+        return new TimerReapeter(Function, delay, numberOfLoop, ...funcArgs)
     }
 
     // ! run a loop with number of loop in argument and run execution instant
     static looperInstant(Function, delay, numberOfLoop, ...funcArgs) {
-        return new TimerClasse.TimerReapeterInstant(Function, delay, numberOfLoop, ...funcArgs)
+        return new TimerReapeterInstant(Function, delay, numberOfLoop, ...funcArgs)
     }
 
     // ! run a loop with number of loop in argument, run first loop after timing and run a function after the loop as finish
     static looperRunAfter(Function, delay, numberOfLoop, ...funcArgs) {
-        return new TimerClasse.TimerReapeaterWithFunctionAfter(Function, delay, numberOfLoop, ...funcArgs)
+        return new TimerReapeaterWithFunctionAfter(Function, delay, numberOfLoop, ...funcArgs)
     }
 
     // ! run a loop with number of loop in argument, run execution instant and run a function after the loop as finish
     static looperInstantRunAfter(Function, delay, numberOfLoop, ...funcArgs) {
-        return new TimerClasse.TimerReapeaterInstantWithFunctionAfter(Function, delay, numberOfLoop, ...funcArgs)
+        return new TimerReapeaterInstantWithFunctionAfter(Function, delay, numberOfLoop, ...funcArgs)
     }
 }
 
